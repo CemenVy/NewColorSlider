@@ -11,6 +11,8 @@
 		60AAD3AA2ADE697400BEDE81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AAD3A92ADE697400BEDE81 /* ContentView.swift */; };
 		60AAD3AC2ADE697500BEDE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60AAD3AB2ADE697500BEDE81 /* Assets.xcassets */; };
 		60AAD3AF2ADE697500BEDE81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60AAD3AE2ADE697500BEDE81 /* Preview Assets.xcassets */; };
+		60AAD3B62ADE835D00BEDE81 /* RectangelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AAD3B52ADE835D00BEDE81 /* RectangelView.swift */; };
+		60AAD3B82ADE83D500BEDE81 /* ColorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AAD3B72ADE83D500BEDE81 /* ColorSliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		60AAD3A92ADE697400BEDE81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		60AAD3AB2ADE697500BEDE81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60AAD3AE2ADE697500BEDE81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		60AAD3B52ADE835D00BEDE81 /* RectangelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangelView.swift; sourceTree = "<group>"; };
+		60AAD3B72ADE83D500BEDE81 /* ColorSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				60AAD3A72ADE697400BEDE81 /* NewColorSliderApp.swift */,
 				60AAD3A92ADE697400BEDE81 /* ContentView.swift */,
+				60AAD3B52ADE835D00BEDE81 /* RectangelView.swift */,
+				60AAD3B72ADE83D500BEDE81 /* ColorSliderView.swift */,
 				60AAD3AB2ADE697500BEDE81 /* Assets.xcassets */,
 				60AAD3AD2ADE697500BEDE81 /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				60AAD3AA2ADE697400BEDE81 /* ContentView.swift in Sources */,
+				60AAD3B82ADE83D500BEDE81 /* ColorSliderView.swift in Sources */,
 				60AAD3A82ADE697400BEDE81 /* NewColorSliderApp.swift in Sources */,
+				60AAD3B62ADE835D00BEDE81 /* RectangelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

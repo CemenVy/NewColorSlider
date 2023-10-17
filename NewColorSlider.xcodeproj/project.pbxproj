@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		605679692ADEF01B005DB31E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605679682ADEF01B005DB31E /* TextFieldView.swift */; };
 		60AAD3A82ADE697400BEDE81 /* NewColorSliderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AAD3A72ADE697400BEDE81 /* NewColorSliderApp.swift */; };
 		60AAD3AA2ADE697400BEDE81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AAD3A92ADE697400BEDE81 /* ContentView.swift */; };
 		60AAD3AC2ADE697500BEDE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60AAD3AB2ADE697500BEDE81 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		605679682ADEF01B005DB31E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		60AAD3A42ADE697400BEDE81 /* NewColorSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewColorSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60AAD3A72ADE697400BEDE81 /* NewColorSliderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewColorSliderApp.swift; sourceTree = "<group>"; };
 		60AAD3A92ADE697400BEDE81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				60AAD3A92ADE697400BEDE81 /* ContentView.swift */,
 				60AAD3B52ADE835D00BEDE81 /* RectangelView.swift */,
 				60AAD3B72ADE83D500BEDE81 /* ColorSliderView.swift */,
+				605679682ADEF01B005DB31E /* TextFieldView.swift */,
 				60AAD3AB2ADE697500BEDE81 /* Assets.xcassets */,
 				60AAD3AD2ADE697500BEDE81 /* Preview Content */,
 			);
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60AAD3AA2ADE697400BEDE81 /* ContentView.swift in Sources */,
+				605679692ADEF01B005DB31E /* TextFieldView.swift in Sources */,
 				60AAD3B82ADE83D500BEDE81 /* ColorSliderView.swift in Sources */,
 				60AAD3A82ADE697400BEDE81 /* NewColorSliderApp.swift in Sources */,
 				60AAD3B62ADE835D00BEDE81 /* RectangelView.swift in Sources */,

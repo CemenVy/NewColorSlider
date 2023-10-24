@@ -8,18 +8,29 @@
 import SwiftUI
 
 struct TextFieldView: View {
-    let value: String
     @Binding var text: String
-    @FocusState var isInputActive: Bool
-    var onCommit: () -> Void
+    
+    var action: () -> Void
     
     var body: some View {
-        TextField(value, text: $text)
-            .textFieldStyle(.roundedBorder)
-            .frame(width: 45)
-            .multilineTextAlignment(.trailing)
-            .keyboardType(.decimalPad)
+        TextField("0", text: $text) { _ in
+            withAnimation {
+                action()
+            }
         }
-
+        .frame(width: 55, alignment: .trailing)
+        .multilineTextAlignment(.trailing)
+        .textFieldStyle(.roundedBorder)
+        .keyboardType(.numberPad)
+        
+    }
 }
 
+struct TextFieldView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.orange
+            TextFieldView(text: .constant("128"), action: {})
+        }
+    }
+}

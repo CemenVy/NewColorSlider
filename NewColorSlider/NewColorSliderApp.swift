@@ -12,7 +12,6 @@ struct NewColorSliderApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .background(Color.orange)
         }
     }
 }

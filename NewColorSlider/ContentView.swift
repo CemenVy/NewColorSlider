@@ -8,95 +8,45 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var redSliderValue = Double.random(in: 0...255)
-    @State private var greenSliderValue = Double.random(in: 0...255)
-    @State private var blueSliderValue = Double.random(in: 0...255)
+    @State private var red = Double.random(in: 0...255).rounded()
+    @State private var green = Double.random(in: 0...255).rounded()
+    @State private var blue = Double.random(in: 0...255).rounded()
     
-    @State private var redSliderTextField = ""
-    @State private var greenSliderTextField = ""
-    @State private var blueSliderTextField = ""
-    
-    @State private var color: Color?
+    @FocusState private var isInputActive: Bool
     
     var body: some View {
-        VStack(spacing: 20) {
-            RectangleView(color: color ?? .white)
-            HStack{
+        /* ZStack для модификатора .onTapGesture, Без использования ZStack область жестов ограничивается вертикальным стеком, который
+         заканчивается сразу после слайдеров */
+        ZStack {
+            VStack(spacing: 40) {
+                RectangleView(red: red, green: green, blue: blue)
+                
                 VStack {
-                    ColorSliderView(value: $redSliderValue, color: .red)
-                        .onChange(of: redSliderValue, {
-                            updateColor()
-                        })
-                    ColorSliderView(value: $greenSliderValue, color: .green)
-                        .onChange(of: greenSliderValue, {
-                            updateColor()
-                        })
-                    ColorSliderView(value: $blueSliderValue, color: .blue)
-                        .onChange(of: blueSliderValue, {
-                            updateColor()
-                        })
+                    ColorSliderView(value: $red, color: .red)
+                    ColorSliderView(value: $green, color: .green)
+                    ColorSliderView(value: $blue, color: .blue)
                 }
-                VStack (spacing: 8) {
-                    TextFieldView(
-                        value: "\(lround(redSliderValue))",
-                        text: $redSliderTextField) {
-                        updateValue(.red)
-                    }
-                    TextFieldView(
-                        value: "\(lround(greenSliderValue))",
-                        text: $greenSliderTextField) {
-                        updateValue(.green)
-                    }
-                    TextFieldView(
-                        value: "\(lround(blueSliderValue))",
-                        text: $blueSliderTextField) {
-                        updateValue(.blue)
+                .frame(height: 150)
+                .focused($isInputActive)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") {
+                            isInputActive = false
+                        }
                     }
                 }
+                Spacer()
             }
-            Spacer()
         }
         .padding()
-        .onAppear {
-            updateColor()
+        .background(Color.orange)
+        .onTapGesture {
+            isInputActive = false
         }
-    }
-    
-    private func updateColor() {
-        color = Color(
-            red: redSliderValue / 255,
-            green: greenSliderValue / 255,
-            blue: blueSliderValue / 255
-        )
-    }
-    
-    private func updateValue(_ textField: ColorTextField) {
-        
-        withAnimation {
-        switch textField {
-        case .red:
-            redSliderValue = Double(redSliderTextField) ?? 0
-        case .green:
-            greenSliderValue = Double(greenSliderTextField) ?? 0
-        case .blue:
-            blueSliderValue = Double(blueSliderTextField) ?? 0
-        }
-    }
-        updateColor()
-    }
-    
-    private func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
-extension ContentView {
-    enum ColorTextField {
-        case red
-        case green
-        case blue
-    }
-}
 
 
 #Preview {

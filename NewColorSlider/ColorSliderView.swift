@@ -9,15 +9,41 @@ import SwiftUI
 
 
 struct ColorSliderView: View {
+    
     @Binding var value: Double
+    @State private var text = ""
+    @State private var showAlert = false
+    
     let color: Color
     
     var body: some View {
-        HStack(spacing: 5) {
-            Text("\(Int(value))").foregroundStyle(.white)
-                .frame(width: 40, alignment: .leading)
+        HStack {
+            Text(value.formatted())
+                .frame(width: 35, alignment: .leading)
+                .foregroundStyle(.white)
+            
             Slider(value: $value, in: 0...255, step: 1)
-                .tint(Color(color))
+                .tint(color)
+                .onChange(of: value) { _, newValue in
+                    text = newValue.formatted()
+                }
+            
+            TextFieldView(text: $text, action: checkValue)
+                .alert("Wrong Format", isPresented: $showAlert, actions: {}) {
+                    Text("Please enter value from 0 to 255")
+                }
+        }
+        .onAppear {
+            text = value.formatted()
+        }
+    }
+    
+    private func checkValue() {
+        if let value = Double(text), (0...255).contains(value) {
+            self.value = value
+        } else {
+            showAlert.toggle()
+            value = 0
         }
     }
 }

@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct RectangleView: View {
-    let color: Color
+    let red: Double
+    let green: Double
+    let blue: Double
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 10)
-            .frame(width: 360, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-            .foregroundStyle(color)
-            .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.white, lineWidth: 5)
+        Color(red: red / 255, green: green / 255, blue: blue / 255)
+            .clipShape(.rect(cornerRadius: 20))
+            .frame(height: 130)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(Color.white, lineWidth: 4)
             )
     }
 }
 
-#Preview {
-    RectangleView(color: .red)
+struct Rectangle_Previews: PreviewProvider {
+    static var previews: some View {
+        RectangleView(red: 100, green: 100, blue: 100)
+    }
 }
+

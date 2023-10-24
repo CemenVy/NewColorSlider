@@ -59,9 +59,9 @@
 			children = (
 				60AAD3A72ADE697400BEDE81 /* NewColorSliderApp.swift */,
 				60AAD3A92ADE697400BEDE81 /* ContentView.swift */,
-				60AAD3B52ADE835D00BEDE81 /* RectangelView.swift */,
 				60AAD3B72ADE83D500BEDE81 /* ColorSliderView.swift */,
 				605679682ADEF01B005DB31E /* TextFieldView.swift */,
+				60AAD3B52ADE835D00BEDE81 /* RectangelView.swift */,
 				60AAD3AB2ADE697500BEDE81 /* Assets.xcassets */,
 				60AAD3AD2ADE697500BEDE81 /* Preview Content */,
 			);
